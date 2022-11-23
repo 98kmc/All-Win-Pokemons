@@ -3,20 +3,20 @@ package com.example.allwinpokemones.model
 import com.google.gson.annotations.SerializedName
 
 data class Pokemon(
-     val id : Int,
-     val num : String,
-     val name : String,
-     val img : String,
-     val type : List<String>,
-     val height : String,
-     val weight : String,
-     val candy : String,
-     val candy_count : Int,
-     val egg : String,
-     val spawn_chance : Double,
-     val avg_spawns : Double,
-     val spawns_time : String,
-     val multipliers : List<Double>,
-     val weakness : List<String>,
-     val next_evolution : List<Evolution>
+     @SerializedName("id") val id : Int,
+     @SerializedName("num") val num : String,
+     @SerializedName("name") val name : String,
+     @SerializedName("img") val img : String,
+     @SerializedName("type") val type : List<String>,
+     @SerializedName("height") val height : String,
+     @SerializedName("weight") val weight : String,
+     @SerializedName("candy") val candy : String,
+     @SerializedName("candy_count") val candy_count : Int,
+     @SerializedName("egg") val egg : String,
+     @SerializedName("spawn_chance") val spawn_chance : Double,
+     @SerializedName("avg_spawns") val avg_spawns : Int,
+     @SerializedName("spawn_time") val spawn_time : String,
+     @SerializedName("multipliers") val multipliers : List<Double>,
+     @SerializedName("weaknesses") val weaknesses : List<String>,
+     @SerializedName("next_evolution") val next_evolution : List<NextEvolution>
 )

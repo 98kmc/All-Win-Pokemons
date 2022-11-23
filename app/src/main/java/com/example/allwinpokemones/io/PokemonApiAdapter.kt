@@ -11,7 +11,7 @@ class PokemonApiAdapter {
     companion object{
         private var API_SERVICE: PokemonApiResponse? = null
 
-        private val BASE_URL = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/"
+        private val BASE_URL = "https://dog.ceo/api/breed/"
 
         fun getApiService() : PokemonApiResponse {
             if (API_SERVICE == null) {
