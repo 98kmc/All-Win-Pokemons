@@ -23,12 +23,11 @@ class MainActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initApi()
-
+        println(puppies)
         }
     private fun initApi(){
-
         CoroutineScope(Dispatchers.IO).launch{
-            val call = PokemonApiAdapter.getApiService().getDogsByBreeds("hound/images")
+            val call = getRetrofit().create(PokemonApiResponse::class.java).getDogsByBreeds("hound/images")
             val puppieses = call.body()
             runOnUiThread{
                 if(call.isSuccessful){
@@ -39,7 +38,12 @@ class MainActivity : AppCompatActivity()  {
                     println("Hello")
                 }
             }
-
         }
+    }
+    private fun getRetrofit():Retrofit{
+        return Retrofit.Builder()
+            .baseUrl("https://dog.ceo/api/breed/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
     }
