@@ -1,4 +1,4 @@
-package com.example.allwinpokemones.model
+package com.example.allwinpokemones.data.model.pokemon
 
 import com.google.gson.annotations.SerializedName
 
@@ -14,7 +14,7 @@ data class Pokemon(
      @SerializedName("candy_count") val candy_count : Int,
      @SerializedName("egg") val egg : String,
      @SerializedName("spawn_chance") val spawn_chance : Double,
-     @SerializedName("avg_spawns") val avg_spawns : Int,
+     @SerializedName("avg_spawns") val avg_spawns : Double,
      @SerializedName("spawn_time") val spawn_time : String,
      @SerializedName("multipliers") val multipliers : List<Double>,
      @SerializedName("weaknesses") val weaknesses : List<String>,

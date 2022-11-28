@@ -1,17 +1,17 @@
-package com.example.allwinpokemones.io
+package com.example.allwinpokemones.core
 
-import okhttp3.OkHttp
-import okhttp3.logging.HttpLoggingInterceptor
+import com.example.allwinpokemones.data.api.PokemonApiResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
 class PokemonApiAdapter {
 
+    //Devuelve una instancia la interfaz para
     companion object{
         private var API_SERVICE: PokemonApiResponse? = null
 
-        private val BASE_URL = "https://dog.ceo/api/breed/"
+        private val BASE_URL = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/"
 
         fun getApiService() : PokemonApiResponse {
             if (API_SERVICE == null) {

@@ -1,4 +1,4 @@
-package com.example.allwinpokemones.model
+package com.example.allwinpokemones.data.model.pokemon
 
 import com.google.gson.annotations.SerializedName
 
