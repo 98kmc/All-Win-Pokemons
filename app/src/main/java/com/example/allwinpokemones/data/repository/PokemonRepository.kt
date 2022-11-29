@@ -1,4 +1,4 @@
-package com.example.allwinpokemones.data
+package com.example.allwinpokemones.data.repository
 
 import com.example.allwinpokemones.data.api.PokemonApiService
 import com.example.allwinpokemones.data.model.pokemon.PokemonList

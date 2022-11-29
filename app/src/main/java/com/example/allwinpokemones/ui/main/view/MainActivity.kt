@@ -22,6 +22,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel.onCreate()
+        if (!viewModel.pokList.isNullOrEmpty()){
+            println(pokList[0])
+        }
+        else{
+            println("Fail")
+        }
+
+
     }
 
     private fun initApi() {

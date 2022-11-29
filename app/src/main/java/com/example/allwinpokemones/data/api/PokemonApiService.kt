@@ -9,7 +9,7 @@ class PokemonApiService {
 
     suspend fun getAllPokemons(): PokemonList {
         return withContext(Dispatchers.IO){
-            val apiResponse = PokemonApiAdapter.getApiService().getPokemonList()
+            val apiResponse = PokemonApiAdapter.getRetrofitApiService().getPokemonList()
             apiResponse.body() ?: PokemonList(emptyList())
         }
     }

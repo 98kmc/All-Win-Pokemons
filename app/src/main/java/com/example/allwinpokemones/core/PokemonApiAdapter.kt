@@ -13,7 +13,7 @@ class PokemonApiAdapter {
 
         private val BASE_URL = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/"
 
-        fun getApiService() : PokemonApiResponse {
+        fun getRetrofitApiService() : PokemonApiResponse {
             if (API_SERVICE == null) {
                 val retrofit = Retrofit.Builder()
                     .baseUrl(BASE_URL)

@@ -7,5 +7,4 @@ import retrofit2.http.GET
 interface PokemonApiResponse {
     @GET("pokedex.json")
     suspend fun getPokemonList(): Response<PokemonList>
-
 }
