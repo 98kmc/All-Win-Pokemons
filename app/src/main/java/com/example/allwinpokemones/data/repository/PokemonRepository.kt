@@ -7,10 +7,11 @@ import com.example.allwinpokemones.data.model.pokemon.Pokemon
 
 class PokemonRepository {
     private val apiService = PokemonApiService()
+    private val pokProvider = PokemonProvider()
 
     suspend fun getAllPokemons(): PokemonList {
         val response =  apiService.getAllPokemons()
-        PokemonProvider.pokemonList = response.pokemonList
+        pokProvider.pokemonList = response.pokemonList
         return response
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.allwinpokemones.R
+import com.example.allwinpokemones.core.PokemonApiAdapter
 import com.example.allwinpokemones.data.api.PokemonApiResponse
 import com.example.allwinpokemones.data.model.pokemon.Pokemon
 import com.example.allwinpokemones.ui.main.viewmodel.MainViewModel
@@ -21,34 +22,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        viewModel.onCreate()
-        if (!viewModel.pokList.isNullOrEmpty()){
-            println(pokList[0])
-        }
-        else{
-            println("Fail")
-        }
 
-
-    }
-
-    private fun initApi() {
         CoroutineScope(Dispatchers.IO).launch {
-            val call = getRetrofit().create(PokemonApiResponse::class.java).getPokemonList()
-            val puppieses = call.body()
-            runOnUiThread {
-                if (call.isSuccessful) {
-                    pokList.clear()
-                    pokList.addAll(puppieses?.pokemonList ?: emptyList())
-                    println(pokList[0])
-                } else {
-                    //show error
-                    println("Hello")
-                }
+            viewModel.onCreate()
+            runOnUiThread{
+                if (!viewModel.pokList.isNullOrEmpty()) println(viewModel.pokList[0])
             }
         }
     }
-
+    
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/")
