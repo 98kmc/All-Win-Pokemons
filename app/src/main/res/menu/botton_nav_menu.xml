@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/battleFragment"
+        android:title="Battle"
+        android:icon="@drawable/pokemon_battle"/>
+    <item
+        android:id="@+id/pokedexFragment"
+        android:title="My Pokedex"
+        android:icon="@drawable/pokemon_trainer"/>
+</menu>
