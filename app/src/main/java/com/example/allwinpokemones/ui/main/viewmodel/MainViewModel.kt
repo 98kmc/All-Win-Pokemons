@@ -13,7 +13,7 @@ class MainViewModel : ViewModel() {
 
     val pokemonModel = MutableLiveData<PokemonList>()
     var pokList = listOf<Pokemon>()
-    val getPokemonsUseCase = GetPokemons()
+    val getPokemonsUseCase : GetPokemons
 
     fun onCreate(){
         viewModelScope.launch {

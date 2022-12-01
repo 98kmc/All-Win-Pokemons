@@ -1,13 +1,14 @@
 package com.example.allwinpokemones.data.repository
 
-import com.example.allwinpokemones.data.api.PokemonApiService
+import com.example.allwinpokemones.data.model.PokemonApiService
 import com.example.allwinpokemones.data.model.pokemon.PokemonList
 import com.example.allwinpokemones.data.model.PokemonProvider
-import com.example.allwinpokemones.data.model.pokemon.Pokemon
+import javax.inject.Inject
 
-class PokemonRepository {
-    private val apiService = PokemonApiService()
-    private val pokProvider = PokemonProvider()
+class PokemonRepository @Inject constructor(
+    private val apiService : PokemonApiService,
+    private val pokProvider : PokemonProvider
+){
 
     suspend fun getAllPokemons(): PokemonList {
         val response =  apiService.getAllPokemons()

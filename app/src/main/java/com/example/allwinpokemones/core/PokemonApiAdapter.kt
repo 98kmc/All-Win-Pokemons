@@ -7,7 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class PokemonApiAdapter {
 
-    //Devuelve una instancia la interfaz para
     companion object{
         private var API_SERVICE: PokemonApiResponse? = null
 

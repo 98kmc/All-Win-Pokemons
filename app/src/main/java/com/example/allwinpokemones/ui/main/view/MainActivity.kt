@@ -11,6 +11,7 @@ import com.example.allwinpokemones.data.api.PokemonApiResponse
 import com.example.allwinpokemones.data.model.pokemon.Pokemon
 import com.example.allwinpokemones.databinding.ActivityMainBinding
 import com.example.allwinpokemones.ui.main.viewmodel.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
